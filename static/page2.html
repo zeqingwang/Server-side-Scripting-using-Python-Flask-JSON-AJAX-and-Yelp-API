@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment6</title>
+<style>
+    .image1{
+        position: absolute;
+        top:-605px;
+        clip: rect(605px 1920px 1080px 0px);       
+        transform: scale(0.538,0.538) translateX(-43.5%);    
+    }
+    .headline1{
+        position: absolute;
+        color: white;
+        left: 70px;
+        top: 60px;
+        font: 30pt Arial bold;
+    }
+    .headline2{
+        position: absolute;
+        color: white;
+        left: 70px;
+        top: 140px;
+        font: 25pt Arial;
+    }
+    .input1{
+        position: absolute;
+        color:blue;
+        left: 70px;
+        top: 280px;
+        font: 25pt Arial;
+    }
+    .input2{
+        position: absolute;
+        color:blue;
+        left: 70px;
+        top: 400px;
+        font: 25pt Arial;
+    }
+    .input3{
+        position: absolute;
+        color:blue;
+        left: 600px;
+        top: 400px;
+        font: 25pt Arial;
+    }
+    .input4{
+        position: absolute;
+        color:blue;
+        left: 70px;
+        top: 520px;
+        font: 25pt Arial;
+    }
+    .input5{
+        position: absolute;
+        color:blue;
+        left: 70px;
+        top: 660px;
+        font: 25pt Arial;
+    }
+    .input6{
+        position: absolute;
+        left: 70px;
+        top: 730px;
+    }
+    .inputbox{
+        height:35px;
+        font-size:25pt;
+    }
+    .selectbox{
+        height:40px;
+        font-size:25pt;
+        width: 355px;
+    }
+    .line{
+        position: absolute;
+        color:blue;
+        top: 640px;
+        left:70px;
+    }
+    .checkbox{
+        height:20px;
+        width:20px;
+    }
+    .button {
+        border: none;
+        color: white;
+        padding: 30px 64px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 40px;
+        
+        cursor: pointer;
+    }
+    .button1{
+        background-color: blue;
+    }
+    .button2{
+        background-color: orange;
+    }
+</style>
+<script language="javascript">
+    var latitude;
+    var longitude;
+    var keyword;
+    var distance;
+    var category;
+    
+    function search(){
+        keyword=document.getElementById("keyword").value
+        distance=document.getElementById("distance").value
+        category=document.getElementById("category").value     
+        if(document.getElementById("checkloc").checked==false){//get the lat&lon for inputlocation
+            var geo_url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBESrZs_dUaIqlwB4aejmdWRd1EGayoCEA&address=";
+            geo_url+=document.getElementById("location").value
+            fetch(geo_url)
+                .then(res => res.json())
+                .then(function(data){
+                    console.log(data)
+                    latitude = data["results"][0]["geometry"]["location"]["lat"]
+                    longitude = data["results"][0]["geometry"]["location"]["lng"] 
+                    console.log("google:",latitude,longitude)
+                    request(latitude,longitude)                     
+                })           
+        }
+        else{//get the lat&lon via ip 
+            var geo_url="https://ipinfo.io/?token=0466c2dd1050ca"
+            fetch(geo_url)
+                .then(res => res.json())
+                .then(function(data){
+                    var iplocation=data["loc"] 
+                    latitude=iplocation.substring(0,iplocation.indexOf(','))
+                    longitude=iplocation.substring(iplocation.indexOf(',')+1,iplocation.length)
+                    console.log("ip:",latitude,longitude) 
+                    request(latitude,longitude)                                            
+                })                        
+        }
+
+    }
+    function request(latitude,longitude){//make sure get lat&lon before request backend
+        var request_url = "http://127.0.0.1:5000/search?"
+        request_url+="latitude="+latitude
+        request_url+="&longitude="+longitude
+        request_url+="&keyword="+keyword
+        request_url+="&distance="+distance
+        request_url+="&category="+category
+        console.log(request_url)
+        var response=fetch(request_url)
+            .then(res => res.json())
+            .then(function(data){
+                   console.log(data["data"][0]["alias"])                                           
+            })
+                 
+        
+    }
+    function mysubmit(){
+       
+    }
+    function myclear(){
+        document.getElementById("keyword").value="";        
+        document.getElementById("distance").value=10;
+        document.getElementById("category").value="Default";
+        document.getElementById("checkloc").checked=false;
+        document.getElementById("location").disabled =false;
+        document.getElementById("location").value="";       
+    }
+    function checkchange(status){
+        document.getElementById("location").value="";
+        document.getElementById("location").disabled =status;
+    }
+</script>
+</head>
+<body>
+    <DIV >
+        <IMG class="image1" SRC="https://csci571.com/hw/hw6/images/banner.jpeg" ALT="banner" >
+        <DIV class="headline1">
+            Business Rearch
+        </DIV>
+        <DIV class="headline2">
+            Fill out the form to get businesses near you!
+        </DIV>
+    </DIV>
+    <!-- <form name="myform" target="id_iframe" onsubmit="search()" action="http://localhost:5000/search" method="get"> -->
+        <form name="myform" target="id_iframe" action="#" method="get">
+        <DIV class="input1">
+            Keyword <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="keyword" name="keyword" TYPE="text" maxlength="255" size="48" required>
+        </DIV>
+        <DIV class="input2">
+            Distance(miles)<BR>
+            <INPUT class="inputbox" id="distance" TYPE="number" value="10" maxlength="20" size="15" required>
+        </DIV>
+        <DIV class="input3">
+            Category <span style="color:red">*</span><BR>
+            <SELECT class="selectbox" id="category" name="category">
+                <OPTION value="Default">Default
+                <OPTION value="Arts & Entertainment">Arts & Entertainment
+                <OPTION value="Health & Medical">Health & Medical
+                <OPTION value="Hotels & Travel">Hotels & Travel
+                <OPTION value="Food">Food
+                <OPTION value="Professional Services">Professional Services
+        </SELECT>
+        </DIV>
+        <DIV class="input4">
+            Location <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="location" TYPE="text" maxlength="255" size="48" required>
+        </DIV>   
+        <DIV class="line">        
+            <hr style="border: 2px solid blue" width=880px/>
+        </DIV>
+        <DIV class="input5">
+            Want us to auto-detect your location?Check here
+            <input class="checkbox" id="checkloc" type="checkbox" onClick="checkchange(this.checked)">
+        </DIV>    
+        <DIV class="input6">
+            <!-- <button class="button button1" type="submit">Submit</button> -->
+            <button class="button button1" onclick="search()">Submit</button>
+            <button class="button button2" onClick="myclear()">Clear</button>
+        </DIV>
+    </form>
+  
+</body>
+
+
+</html>

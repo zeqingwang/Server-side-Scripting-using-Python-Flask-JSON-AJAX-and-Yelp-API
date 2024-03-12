@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment6</title>
+<style>
+    body{
+        background-color: rgb(187, 185, 185);
+    }
+    .firstwindow{
+        background-color: white;
+        width: 612.4px;
+        height: 540px;
+        
+        margin: 0px auto;
+        padding:0px 30px 30px 30px;
+       
+    }
+    .image1{
+        position: absolute;
+        top:-580px;
+        clip: rect(500px 1920px 1080px 0px);       
+        transform: scale(0.35,0.35) translateX(-97.4%); 
+        margin:0 auto;   
+    }
+    .headline1{
+        position: absolute;
+        color: white;
+        left: 225px;
+        top: 30px;
+        font: 19pt Arial;
+        font-weight:bolder
+    }
+    .headline2{
+        position: absolute;
+        color: white;
+        left: 225px;
+        top: 80px;
+        font: 14pt Arial;
+    }
+    .input1{
+        position: absolute;
+        color:blue;
+        left: 225px;
+        top: 180px;
+        font: 15pt Arial;
+    }
+    .input2{
+        position: absolute;
+        color:blue;
+        left: 225px;
+        top: 270px;
+        font: 15pt Arial;
+    }
+    .input3{
+        position: absolute;
+        color:blue;
+        left: 550px;
+        top: 270px;
+        font: 15pt Arial;
+    }
+    .input4{
+        position: absolute;
+        color:blue;
+        left: 225px;
+        top: 360px;
+        font: 15pt Arial;
+    }
+    .input5{
+        position: absolute;
+        color:blue;
+        left: 225px;
+        top: 470px;
+        font: 17pt Arial;
+    }
+    .input6{
+        position: absolute;
+        left: 225px;
+        top: 515px;
+    }
+    .inputbox{
+        height:35px;
+        font-size:25pt;
+    }
+    .selectbox{
+        height:40px;
+        font-size:18pt;
+        width: 260px;
+    }
+    .line1{
+        position: absolute;
+        color:blue;
+        top: 450px;
+        left:225px;
+    }
+    .checkbox{
+        height:20px;
+        width:20px;
+    }
+    .button {
+        border: none;
+        color: white;
+        padding: 13px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        
+        cursor: pointer;
+    }
+    .button1{
+        background-color: blue;
+    }
+    .button2{
+        background-color: orange;
+    }
+    .result{
+        position: relative;
+        background-color: white;               
+        margin-top: 50px;
+        width:1000px;
+        
+  
+    }
+    .page{
+        top:50px;
+        position:relative;
+       margin:auto;
+        width:600px;
+        height:1600px;
+        background-color: white;
+        display:none;
+
+
+    }
+    .detailtitle{
+        position: relative;
+        top:30px; 
+        font: 25px bold;
+        text-align: center;
+    }
+    .line2{
+        position: relative;
+        top:35px;
+    }
+    .status{
+        position:relative;
+        top:70px;
+        left:40px;
+        font: 20px bold;
+        
+    }
+    .statusinfo{
+        position:relative;
+        top:5px;
+        font: 18px ;
+        border-radius: 10px;
+        background: green;
+        text-align: center;
+        
+        width: 100px;
+        height: 30px;
+
+    }
+    .category{
+        position:relative;
+        top:18px;
+        left:320px;
+        color:black;
+        font: 20px bold;
+    }
+    .categoryinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #status, #category{
+        display:inline;
+    }
+    .address{
+        position:relative;
+        top:70px;
+        left:40px;
+        font: 20px bold;
+        
+    }
+    .addinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     .number{
+        position:relative;
+        top:25px;
+        left:320px;
+        color:black;
+        font: 20px bold;
+     }
+     .numinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #address, #number{
+        display:inline;
+    }
+     .tran{
+        position:relative;
+        top:70px;
+        left:40px;
+        font: 20px bold;
+        
+    }
+    .traninfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     .price{
+        position:relative;
+        top:24px;
+        left:320px;
+        color:black;
+        font: 20px bold;
+     }
+     .priceinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #tran, #price{
+        display:inline;
+    }
+     .more{
+        position:relative;
+        top:70px;
+        left:40px;
+        font: 20px bold;
+        
+    }
+     .moreinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+    } 
+     .container1 {
+           position:relative;
+           top:70px;
+           left:-40px;
+           width:180px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: medium;
+           border-color:rgb(156, 154, 154);
+    }
+    .container2 {
+           position:relative;
+           top:-264.5px;
+           left:158px;
+           width:180px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: medium;
+           border-color:rgb(156, 154, 154);
+    }
+    .container3 {
+           position:relative;
+           top:-598.9px;
+           left:355px;
+           width:180px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: medium;
+           border-color:rgb(156, 154, 154);
+    }
+    .imagetext{
+        position:absolute;
+        top:280px;
+        margin-left:35%;
+        
+
+       
+        text-align:center;
+        
+        font-size: 15px;
+    }
+
+
+
+    
+
+</style>
+<script language="javascript">
+    var latitude;
+    var longitude;
+    var keyword;
+    var distance;
+    var category;
+    var result_num;
+    var data_copy;
+    
+ async function search(e){ // async声名这是一个异步函数
+    e.preventDefault()
+    clearresult()
+    
+  
+   
+    console.log("执行1111111111111111111")
+        keyword=document.getElementById("keyword").value
+        distance=document.getElementById("distance").value
+        category=document.getElementById("category").value     
+        if(document.getElementById("checkloc").checked==false){//get the lat&lon for inputlocation
+            var geo_url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBESrZs_dUaIqlwB4aejmdWRd1EGayoCEA&address=";
+            geo_url+=document.getElementById("location").value
+        await   fetch(geo_url) // await等 fetch 这个函数执行完成以后在去执行后续代码
+                .then(res => res.json())
+                .then(function(data){
+                    console.log(data)
+                    latitude = data["results"][0]["geometry"]["location"]["lat"]
+                    longitude = data["results"][0]["geometry"]["location"]["lng"] 
+                    console.log("google:",latitude,longitude)
+                    // fetch() request()  不加await  同时执行   执行顺序可能先fetch后request 或者 先request后feach
+                    //加个await相当于等fetch执行完在执行request    
+                    request(latitude,longitude)        
+                    console.log("执行2222222222222222222222222222")             
+                })  
+                .catch((error)=>{
+                    console.error(error);
+                })         
+        }
+        else{//get the lat&lon via ip 
+            var geo_url="https://ipinfo.io/?token=0466c2dd1050ca"
+            fetch(geo_url)
+                .then(res => res.json())
+                .then(function(data){
+                    var iplocation=data["loc"] 
+                    latitude=iplocation.substring(0,iplocation.indexOf(','))
+                    longitude=iplocation.substring(iplocation.indexOf(',')+1,iplocation.length)
+                    console.log("ip:",latitude,longitude) 
+                    request(latitude,longitude)                                            
+                }) 
+                .catch((error)=>{
+                    console.error(error);
+                })                       
+        }
+
+    }
+    
+    //request最后执行 feach已经执行完了
+    //search是
+  async  function request(latitude,longitude){//make sure get lat&lon before request backend
+       
+        var request_url = "http://127.0.0.1:5000/search?"
+        request_url+="latitude="+latitude
+        request_url+="&longitude="+longitude
+        request_url+="&keyword="+keyword
+        request_url+="&distance="+distance
+        request_url+="&category="+category
+        console.log(request_url)
+        var response=await fetch(request_url)
+            .then(res => res.json())
+            .then(function(data){
+                   console.log(data["data"])
+                   result_num=data["number"] 
+                   data_copy=data["data"]
+                   
+                   console.log(result_num)
+                   if(result_num==0){
+                    console.log("true")
+                    document.getElementById("norecord").style.display="block"
+                    document.getElementById("norecord").innerHTML='<DIV style="text-align:center;width:1000px;margin-top: 50px;background-color:white;align:center">                No Records has been found</DIV>';
+                    
+                   }  
+                   else{
+                    console.log("1233333333333444444")
+                    document.getElementById("searchtable").style.display="block"
+                    document.getElementById("searchtableHead").innerHTML='<tr><th style="width:50px;">No.</th><th style="width:100px;">Image</th><th style="width:400px;">Business Name</th><th style="width:100px;">Rating</th><th style="width:100px;">Distance(miles)</th></tr>'
+                    //var tablecontent=''
+
+                    for(var i=0;i<result_num;i++){
+                        var image_url=data["data"][i]["image_url"];
+                        var name=data["data"][i]["name"];
+                        console.log(name)
+                        var rating=data["data"][i]["rating"];
+                        var distance=((data["data"][i]["distance"])/1609.344).toFixed(2);                       
+                        var searchtableRow=document.createElement('tr');                       
+                        searchtableRow.innerHTML='<td>'+(i+1)+'</td><td>'+'<img src=' + image_url +' style="width: 80px; height:80px"></img>'+'</td><td onclick="getdetail('+i+')">'+name+'</td><td>'+rating+'</td><td>'+distance+'</td>';
+                        document.getElementById("searchtableBody").appendChild(searchtableRow);
+
+                    }
+
+
+                }                                     
+            })
+            .catch((error)=>{
+                    console.error(error);
+                })
+                console.log("执行3333333333333333333333333333")
+    }
+    async function getdetail(data_index){
+        document.getElementById("page").style.display="block"
+        var reqdetail_url = "http://127.0.0.1:5000/detail?"
+        var business_id=data_copy[data_index]["id"]
+        reqdetail_url+="id="+business_id;
+        console.log(reqdetail_url);
+        var response=await fetch(reqdetail_url)
+            .then(res => res.json())
+            .then(function(data){
+                console.log(data);
+                console.log(data["data"]["name"]);
+                document.getElementById("detailname").innerHTML=data["data"]["name"];
+                document.getElementById("addinfo").innerHTML=data["data"]["location"]["display_address"];
+                document.getElementById("traninfo").innerHTML=data["data"]["transactions"];
+                document.getElementById("categoryinfo").innerHTML=data["data"]["category"];
+                document.getElementById("numinfo").innerHTML=data["data"]["display_phone"];
+                document.getElementById("priceinfo").innerHTML=data["data"]["price"];
+
+                
+                
+
+
+
+    
+            })
+
+    }
+    function myclear(){
+        document.getElementById("keyword").value="";        
+        document.getElementById("distance").value=10;
+        document.getElementById("category").value="Default";
+        document.getElementById("checkloc").checked=false;
+        document.getElementById("location").disabled =false;
+        document.getElementById("location").value="";  
+        clearresult(); 
+        document.getElementById("searchtable").style.display="none";
+        document.getElementById("norecord").style.display="none";
+        document.getElementById("page").style.display="none";   
+    }
+    function checkchange(status){
+        document.getElementById("location").value="";
+        document.getElementById("location").disabled =status;
+    }
+    function clearresult(){
+        document.getElementById("norecord").innerHTML='';
+        document.getElementById("searchtableHead").innerHTML='';
+        document.getElementById("searchtableBody").innerHTML='';
+
+  
+    }
+
+
+</script>
+</head>
+<body>
+    <DIV class="firstwindow">
+    <DIV >
+        <IMG class="image1" SRC="https://csci571.com/hw/hw6/images/banner.jpeg" ALT="banner" >
+        <DIV class="headline1">
+            Business Search
+        </DIV>
+        <DIV class="headline2">
+            Fill out the form to get businesses near you!
+        </DIV>
+    </DIV>
+    <!-- <form name="myform" target="id_iframe" onsubmit="search()" action="http://localhost:5000/search" method="get"> -->
+        <form name="myform" target="" action="#" method="get">
+        <DIV class="input1">
+            Keyword <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="keyword" name="keyword" TYPE="text" maxlength="255" size="35" required>
+        </DIV>
+        <DIV class="input2">
+            Distance(miles)<BR>
+            <INPUT class="inputbox" id="distance" TYPE="number" value="10" maxlength="20" size="12" required>
+        </DIV>
+        <DIV class="input3">
+            Category <span style="color:red">*</span><BR>
+            <SELECT class="selectbox" id="category" name="category">
+                <OPTION value="Default">Default
+                <OPTION value="Arts & Entertainment">Arts & Entertainment
+                <OPTION value="Health & Medical">Health & Medical
+                <OPTION value="Hotels & Travel">Hotels & Travel
+                <OPTION value="Food">Food
+                <OPTION value="Professional Services">Professional Services
+        </SELECT>
+        </DIV>
+        <DIV class="input4">
+            Location <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="location" TYPE="text" maxlength="255" size="35" required>
+        </DIV>   
+        <DIV class="line">        
+            <hr style="border: 2px solid blue" width=580px/>
+        </DIV>
+        <DIV class="input5">
+            Want us to auto-detect your location?Check here
+            <input class="checkbox" id="checkloc" type="checkbox" onClick="checkchange(this.checked)">
+        </DIV>    
+        <DIV class="input6">
+            <!-- <button class="button button1" type="submit">Submit</button> -->
+            <button class="button button1" onclick="search(event)">Submit</button>
+            <button class="button button2" onClick="myclear()">Clear</button>
+        </DIV>
+    </form>
+    </DIV>
+    <DIV id="result">
+        
+        <DIV id="norecord"style="display: none;">
+            
+               
+        </DIV>
+        <table id="searchtable"align="center" border="1" cellspacing="0" style="margin-top: 50px; display: none;width:780px;">
+            <thead id="searchtableHead" align="center" style="background-color: blue; min-width:100%;height:40px;">
+                
+            </thead>
+            <tbody align="center" id="searchtableBody" style="background-color: white;">
+
+            </tbody>
+
+        </table>
+
+    </DIV>
+    <div id="page" class="page">
+        <div id="detailname"class="detailtitle">
+           
+
+
+        </div>
+        <div class="line2">
+            <hr style="border: 1px solid gray" width=560px/>
+
+        </div>
+      
+        <div id="status"class="status">
+            Status
+            <div id="statusinfo"class="statusinfo">
+                closed
+
+            </div>
+        </div>
+        <div id="category" class="category">
+            Category
+            <div id="categoryinfo" class="categoryinfo">
+                
+            </div>
+
+        </div>
+        <div id="address" class="address">
+            Address
+            <div id="addinfo"class="addinfo">
+                
+
+            </div>
+         
+        </div>
+        <div id="number" class="number">
+            Number
+            <div id="numinfo" class="numinfo">
+               
+
+            </div>
+         
+        </div>
+        <div id="tran" class="tran">
+            Transactions Supported
+            <div id="traninfo" class="traninfo">
+               
+
+            </div>
+         
+        </div>
+        <div id="price"class="price">
+            Price
+            <div id="priceinfo" class="priceinfo">
+               
+            </div>
+        </div>
+        <div class="more">
+            Moreinfo
+            <div id="moreinfo" class="moreinfo">
+               yelp
+            </div>
+        </div>
+        <div class="container1">
+            <IMG class="img1" SRC="demo.jpg" ALT="image1" style="width:100%">
+            <div class="imagetext">
+                image1
+                
+
+            </div>
+
+        </div>
+        <div class="container2">
+            <div class="imagetext">
+                image2
+
+            </div>
+
+        </div>
+        <div class="container3">
+            
+            <div class="imagetext">
+                image3
+
+            </div>
+
+        </div>
+        
+
+
+
+
+    </div>
+  
+</body>
+
+
+</html>

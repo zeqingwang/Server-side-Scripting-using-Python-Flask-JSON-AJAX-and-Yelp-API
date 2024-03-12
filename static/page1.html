@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Assignment6</title>
+<style>
+    body{
+        background-color: rgb(187, 185, 185);
+    }
+    .firstwindow{
+        background-color: white;
+        width: 612.4px;
+        height: 550px;
+        
+        margin: 0px auto;
+        padding:0px 30px 30px 30px;
+       
+    }
+    .image1{
+        position: absolute;
+        top:-580px;
+        clip: rect(500px 1920px 1080px 0px);       
+        transform: scale(0.35,0.35) translateX(-97.4%); 
+        margin:0 auto;   
+    }
+    .headline1{
+        position: relative;
+        color: white;
+        left: 10px;
+        top: 30px;
+        font: 19pt Arial;
+        font-weight:bolder
+    }
+    .headline2{
+        position: relative;
+        color: white;
+        left: 10px;
+        top: 50px;
+        font: 15pt Arial;
+    }
+    .input1{
+        position: relative;
+        color:#4f6fad;
+        left: 10px;
+        top: 130px;
+        font: 15pt Arial;
+    }
+    .input2{
+        position: relative;
+        color:#4f6fad;
+        left: 10px;
+        top: 150px;
+        font: 15pt Arial;
+    }
+    .input3{
+        position: relative;
+        color:#4f6fad;
+        left: 335px;
+        top: 86px;
+        font: 15pt Arial;
+    }
+    .input4{
+        position: relative;
+        color:#4f6fad;
+        left: 10px;
+        top: 110px;
+        font: 15pt Arial;
+    }
+    .input5{
+        position: relative;
+        color:#4f6fad;
+        left: 10px;
+        top: 145px;
+        font: 17pt Arial;
+    }
+    .input6{
+        position: relative;
+        left: 10px;
+        top: 160px;
+    }
+    .inputbox{
+        height:35px;
+        font-size:17pt;
+    }
+    .selectbox{
+        height:40px;
+        font-size:18pt;
+        width: 260px;
+    }
+    .line1{
+        position: relative;
+        color:#4f6fad;
+        top: 130px;
+        left:-5px;
+    }
+    .checkbox{
+        height:20px;
+        width:20px;
+    }
+    .button {
+        border: none;
+        color: white;
+        padding: 13px 35px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        
+        cursor: pointer;
+    }
+    .button1{
+        background-color: #4f6fad;
+        box-shadow:0px 5px  #384d78;
+    }
+    .button2{
+        background-color: #ffb706;
+        box-shadow:0px 5px  #fc8500;
+    }
+    .result{
+        position: relative;
+        background-color: white;               
+        margin-top: 50px;
+        width:1000px;
+        
+  
+    }
+    .page{
+        top:50px;
+        position:relative;
+       margin:auto;
+        width:800px;
+        height:800px;
+        background-color: white;
+        display:none;
+
+
+    }
+    .detailtitle{
+        position: relative;
+        top:30px; 
+        font: 20px bold;
+        text-align: center;
+    }
+    .line2{
+        position: relative;
+        top:35px;
+    }
+    .status{
+        position:relative;
+        top:70px;
+        left:20px;
+        font: 20px bold;
+        
+    }
+    .statusinfo{
+        position:relative;
+        top:5px;
+        font: 15px ;
+        border-radius: 10px;
+        
+        text-align: center;
+        padding:10px;
+        width: 150px;
+        height: 45px;
+
+    }
+    .category{
+        position:relative;
+        top:15px;
+        left:410px;
+        color:black;
+        font: 20px bold;
+    }
+    .categoryinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #status, #category{
+        display:inline;
+    }
+    .address{
+        position:relative;
+        top:70px;
+        left:20px;
+        font: 20px bold;
+        
+    }
+    .addinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     .number{
+        position:relative;
+        top:25px;
+        left:420px;
+        color:black;
+        font: 20px bold;
+     }
+     .numinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #address, #number{
+        display:inline;
+    }
+     .tran{
+        position:relative;
+        top:70px;
+        left:20px;
+        font: 20px bold;
+        
+    }
+    .traninfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     .price{
+        position:relative;
+        top:24px;
+        left:420px;
+        color:black;
+        font: 20px bold;
+     }
+     .priceinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+     }
+     #tran, #price{
+        display:inline;
+    }
+     .more{
+        position:relative;
+        top:70px;
+        left:20px;
+        font: 20px bold;
+        
+    }
+     .moreinfo{
+        position:relative;
+        top:5px;
+        color:rgb(156, 154, 154);
+        font-size: 15px ;
+    } 
+     .container1 {
+           position:relative;
+           top:67px;
+           left:-40px;
+           width:250px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: thin;
+           border-color:rgb(205, 202, 202);
+    }
+    .container2 {
+           position:relative;
+           top:-264.5px;
+           left:228px;
+           width:250px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: thin;
+           border-color:rgb(205, 202, 202);
+    }
+    .container3 {
+           position:relative;
+           top:-596.9px;
+           left:490px;
+           width:250px;
+           height:300px;
+           margin: 30px 50px;
+           border-style: solid;
+           border-width: thin;
+           border-color:rgb(205, 202, 202);
+    }
+    .imagetext{
+        position:absolute;
+        top:280px;
+        margin-left:35%;
+        
+
+       
+        text-align:center;
+        
+        font-size: 15px;
+    }
+
+
+
+    
+
+</style>
+<script language="javascript">
+    var latitude;
+    var longitude;
+    var keyword;
+    var distance;
+    var category;
+    var result_num;
+    var data_copy;
+    var name_status=true;
+    var rating_status=true; 
+    var distance_status=true;
+    
+    
+ async function search(e){ 
+    e.preventDefault()
+    clearresult()
+    
+  
+   
+    console.log("执行1111111111111111111")
+     if (document.getElementById("keyword").checkValidity()==false){
+        document.getElementById("keyword").reportValidity()
+     }
+     if (document.getElementById("category").checkValidity()==false){
+        document.getElementById("category").reportValidity()
+     }
+     if (document.getElementById("location").checkValidity()==false){
+        document.getElementById("location").reportValidity()
+     }
+     if (document.getElementById("distance").value<0){
+        alert("The distance can't be negative");
+     }
+        keyword=document.getElementById("keyword").value
+        distance=document.getElementById("distance").value
+        category=document.getElementById("category").value     
+        if(document.getElementById("checkloc").checked==false){//get the lat&lon for inputlocation
+            var geo_url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBESrZs_dUaIqlwB4aejmdWRd1EGayoCEA&address=";
+            geo_url+=document.getElementById("location").value
+        await   fetch(geo_url) 
+                .then(res => res.json())
+                .then(function(data){
+                    console.log(data)
+                    latitude = data["results"][0]["geometry"]["location"]["lat"]
+                    longitude = data["results"][0]["geometry"]["location"]["lng"] 
+                    console.log("google:",latitude,longitude)
+                       
+                    request(latitude,longitude)        
+                    console.log("执行2222222222222222222222222222")             
+                })  
+                .catch((error)=>{
+                    console.error(error);
+                })         
+        }
+        else{//get the lat&lon via ip 
+            var geo_url="https://ipinfo.io/?token=0466c2dd1050ca"
+            await fetch(geo_url)
+                .then(res => res.json())
+                .then(function(data){
+                    var iplocation=data["loc"] 
+                    latitude=iplocation.substring(0,iplocation.indexOf(','))
+                    longitude=iplocation.substring(iplocation.indexOf(',')+1,iplocation.length)
+                    console.log("ip:",latitude,longitude) 
+                    request(latitude,longitude)                                            
+                }) 
+                .catch((error)=>{
+                    console.error(error);
+                })                       
+        }
+
+    }
+    
+
+  async  function request(latitude,longitude){//make sure get lat&lon before request backend
+       
+        var request_url = "http://127.0.0.1:5000/search?"
+        request_url+="latitude="+latitude
+        request_url+="&longitude="+longitude
+        request_url+="&keyword="+keyword
+        request_url+="&distance="+distance
+        request_url+="&category="+category
+        console.log(request_url)
+        var response=await fetch(request_url)
+            .then(res => res.json())
+            .then(function(data){
+                   console.log(data["data"])
+                   result_num=data["number"] 
+                   data_copy=data["data"]
+                   
+                   console.log(result_num)
+                   if(result_num==0){
+                    console.log("true")
+                    document.getElementById("norecord").style.display="block"
+                    document.getElementById("norecord").innerHTML='<DIV style="text-align:center;width:1000px;margin-top: 50px;background-color:white;align:center">                No Records has been found</DIV>';
+                    
+                   }  
+                   else{
+                    console.log("1233333333333444444")
+                    document.getElementById("searchtable").style.display="block"
+                    document.getElementById("searchtableHead").innerHTML='<tr><th style="width:50px;">No.</th><th style="width:100px;">Image</th><th onclick="namesort()" style="width:400px;">Business Name</th><th onclick=ratingsort() style="width:100px;">Rating</th><th onclick=distancesort() style="width:100px;">Distance(miles)</th></tr>'
+                    
+
+                    for(var i=0;i<result_num;i++){
+                        var image_url
+                        if(data["data"][i]["image_url"]==""){
+                            image_url="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUTEhMVFRUXFxgYFxcYFx0aGBoXFx0dHRcYHRcYHSggGh0lHRgXITEiJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGy0mICYtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAOEA4AMBIgACEQEDEQH/xAAcAAABBAMBAAAAAAAAAAAAAAAAAQUGBwIDBAj/xABJEAACAQIDBAgDBAgDBQgDAAABAgMAEQQSIQUGMUEHEyJRYXGBkTKhsRRCwdEjUmJygpKisjPw8RUkQ2NzCCVTo8LS4eJEVJP/xAAaAQACAwEBAAAAAAAAAAAAAAAAAQIDBAUG/8QAMhEAAQQABAIJBAIDAQEAAAAAAQACAxEEEiExQVEFE2FxgZGhsfAiMtHhwfEUQlIVNP/aAAwDAQACEQMRAD8AvGiiihCKKKKEIooooQiitckgUEsQAOJJsB6moTvB0iQxXXDjrX/WOiD8WqLnBosq2KGSU0wWptJIFBLEADiSbAetRram/eEhuA5kYcoxcfzEgfOqm2vvBiMSbyysw5LwUeSjSmwms7sQf9QuvD0QN5XeA/KsDaPSfM2kMSKO9rsfwFR7Gb5Y6XjO6+CWQf01HhSiqjI47ldBmDgZ9rR46+66Z9ozN8crt5uT9TWkyN3n3rWxpKitAYANB6LJXPefet0ePlTVXdfJiPoa0XrA0ky0HcJ9wm9+NjtlxMh8Ccw/qvUg2f0n4hT+mjjkHhdW9xcfKoEaCakHuGxVL8JA/wC5g9valdOy+kTCS2DloWP64uv8y/japXh51dQyMGU8CpuPcV5qvXdszbM2HbNDIynwOh814H1q5uIPFc+bodh1jdXfr88ivRtFVpu70mg2TFrY/wDiIP7k5eY9qsPB4pJUDxurqeDKbj5Voa8O2XGmw8kJp4/HmuiiiipKlFFFFCEUUUUIRRRRQhFFFFCEU07f27FhIy8h15KPiPkKbt7d6kwiMqlWmtot+F+BIqntpY6SZi8rlmN+J+g5CqZJcug3XQweBM31v0b6lOu829k2MaxOSMHRRw8z3mo8TSFq7dn7JmxF+pjZ7WvlF7X4fSstlxXoWsZE2hQA+fLXBxrImnOfd3FILvh5QBxOQ2+VceGwUkpIjRmNr2VSTbvsKVFSDmkWCPMLTSV3nYOKHHDzf/zb8q45YGUkMpUjiCLH2NLVOwditNFdcGy5pBdIpGHeqkj3ArRJCymzKVI5EWPsaFK1hWFbVjJ4CtZQihOkhpRRakoRSCPxpDS0hFFp0lp33f3gmwkgaNyFuM68VYc7qdL258aZ70hp3WyrexrwWuGiv7YO9OHxZKRv2wL5SCCR3i/Hx7qfq814XEMjBlJUjUEGxBHMGrd3J3zGIAinIWUWCtwD/k31vWqOa9CvP4zo4xDPHqPUKb0UUVeuWiiiihCKKKKEIqI77b1DCr1cRBnYacwoPM+PcKct6duLhIS5sXOka97d/kOJ/wDmqQx2MeV2d2LFjck8zVMsmUUN10cBg+uOd/2j1/XNY4idnYs5JJNyTxJNaGpCaQ1jXowEAVZnRKnYxBHHs/8AqqtBVl9FbZYcSwPMfIGrYfvCx9I//O7w906bqYraTTEYlCIrG5ZQpB5WtxrRu1Ei7VxYjAyhToOFyVLfO9QmffTHOLGZrHuUA+4XSpB0TsTNMSbnqxcnvLVNjwS0C9+Kyz4Z0ccsjso0qm3W411TvtDa+1VlcR4ZWjDMFOU6rfQ6P3VH929mtjcdI+JUDIc0icsw7IW3dpr5U87QfbIkfq1umZsvwfDfs878LVw7iYpocdNFiezJLx4fHfNbTTUMTT3cAb34qLRkheWZLy/6Gzwu1s270gtDK0WHjjCRkrcjiV0NgCLDlTjhZYtsYV88apOmgI5H7pB45TzHgfOolvLujiY8Q5SJpEZiysozaMb2NuBF6lm5mzm2fhZp8T2CQDlvqFW9vUk8PKhheXEO29ETMw7IWvhrNpVHUnjfrwWjo37GFxLlQSrE2I5qgNq6t29trtEyRTYVAoW+a1x3W1Gh5jXka0dH+MKYPFTWBId3tyuEBtTHiukrEFSqRRoT94XNvIGgPDWts+HNJ8DpZZcrRdjW6rT1TxuPsuNJ8algyowVbgHQF++qzxHxt5mrI6LnJXFObkkqSe82Y/jUAnwEoJJikA/cP5VU/wCxvj7rZh9J5bP/AD7KxN2IsPFsz7RLh0ly5ybopY9sjiwpn2rvVgXidUwSq7KwVurj7LEaG410NSPd7HHDbJWXJ1mXMcvfeQjuPfUY29vt18LxfZAhYWzXvb+kVa51NAvhytZYYnPlechP1nXNVbcFBiawalLUlZl2UoNbo5CDoSK0A1kTQmrf3A3u68CCdv0oHYY/fA5H9ofOp3XmvDTsrBlJBBuCNCCOBBq7tyt4xjIe1brksJB39zjwP1rXDJf0led6RwXVnrGDTiOSk1FFFXrlIrVLKFBZjYAEkngAOJrbUC6T9t9XEMOh7Umr+CDgPU/IVFzg0WVbBEZZAwcVB97ttti8Qz8EHZQdyj8TxNMLVkTWBNYCSTZXrY2BjQ1uwSmsDWdqnu7e7mHl2fJM8eaQdZY3I+EacDapNaXGgoTTNibmdzpQACuvB7RliBEcjqDxCmwPmK5mFSTc7dJ8YSxJSJTYtzJ7h+fjSaC40FKV7GNJk27VGBXbs3a82HJMMhQkWJAGvdxqxJdh7HhPVSOC40JMpuD45TYVwbx7goIzPg3LqBmK3zXXvVhx8qs6pw2Kzf50LiGuBAP/AEND7+qjo30xw/8AyG/lX/2004naEkkhldiXJBLcNRwOnDgKlW5e6+HxqSZ3kWRCNFIsVPA2I7wajO1MAYZXibijFfbgfUWPrUHZsoJ2Vsboc7mMaARvpSfcP0hYxFC3VrDi4zH8D7k007Z3kxGK/wAaS4GoUCyg+Q4+tP2A3MjOB+1TSunZLBQBqPu8eZ09xWe7O4q4qDrjMV7TC1gRpUsshoXwVIkwkdvAAo0TXH1TBs7eOaGF4EtkkvmupJ7Qymxv3Cme9WRJ0ZJyxf8AQP8A3VA9rYIQzPFmzZGK5rWvbna+lJ7HNAzKyCeCRx6o67nQjsTlu5vXNgg4iVGzWJzA8vIjvp3xPSVO6MjRRWYEaZuYt31Fdl4Hr5UiByl2C3te1+dOW9W7LYJkVpA+cE6C1rW7yaQc8N0OiJIsM6UB7RmOvbp/SctidIUuGhWFYUYLfUkgm5J/Gt+P6SpJY3jOHQZ1ZbhjpcWvwpi3Z3XkxpdY3VSgBOa/MkcvKuSbYkoxBw6jO4Yr2eZHHjy8aYdIB2JGDCOkNgZhqd++02F6Q1OoujCcoGMsYJHw6n51F9t7Dlwr5JQLkXBBuCO/v96RjcBZCtjxUMjsrHAlNorM1jWVqgr0q08btbZbCTpKuoGjL+sh+IfiPECmUCslpjQ2k9geC12xXpHCYlZUWRDdWAYHwNdFVv0U7auGwrnhd0v/AFL+PvVkVvY7M215HEQmGQs8u7gtUsoVSxNgAST4DjVD7xbSOJxEkpv2m7Pgo0Ue1Wp0i7R6nBsoNmlIQeR1b5C3rVMlqzzus5V1OiofpMh7h/KwNa62ZqwNULtLIVa+6OmyJT+zN/aaqm+tW3uSEk2b1TOFziVTqLjMSL2NWwfd4Ln9JECIX/0P5VS1bezCYNj54tG6pmv+0b3Ppf5U1z9HMABIxTaC/BaNwd4IjCcHiCADcJm4MrcVv36n3pxtLHU7iqsXMyePNHqGuBIrhqq3LG+vGrN6JcS7RzRk3RSpXuBa9x8r+9c+K6MruTFOAl9AwuQPMHX5U8rLhtk4VlDhpDc2+87ctBwUfKnHG5hzO0ASxmKixEXVx/U4kaUdNeKi+wMYMLtR1BtG0jxnu1bs+xsPWnHfjd0yY6EoNJ7Kx7inxH+T+2q/fElnLk9oksT4k3v71eOxtpRz4aPENa4W7H9VgLP5c6UVPBae9GMLsO9szddC09/D52KIdJ+0RGkWEj0FgzAfqrog+RPoKddxcMX2ZkBsX61b91yReqz3i2mcTiJJTwLHL4KNFHtarM3Ow7PsrJGbOyzBTe1iSwGo4U2OzSE/OChiYepwrGnQ5hZ7dST4fwmR+jWYDTFr7MPxqvMXCVdlY5iGYE99ja9T1tzNqDhP7Tv+VQjamDeGV45LZ1JDWN9eevOqntoaNpbsNI55IMgd3Ck5bli+Nw/74qS9Lw/Sw/uH61FN1cUsWKhdtFDi57gdL+l71YXSPu7NierlgXPlUqygi9jqCL8edTaCY3Ac1VO4MxbC7QURfmmzogHbm8k+rVt3YxEa7VxXWEAs0qpfvz6jzsPlTn0e7CkwcUsmIGQtbskjRVubm3Dj8qr/AOwS47FyfZxfNI734BQWJBJ5cqlq1rdNVSAyaaY5vpoC/D9KZb5bK2iZmmw8rNHplVHsVsNRk4Nrc8+NVrtOeV5GaYsZL65hY6crcvKrE3Tl2pHOsMqSGK9nMguFXvEnP3NNfSyqDEoVtmMfbt52W/z9qi8W3NqOwqzDPLJRC7KdNC3kOfkoKKU0grI1SuqkFANKKUU1G07bv4xopVlT4o2DW71HxD2+V6vzDTrIiupurAMD4EXFecYzb3q6ujvaazYUINDFZSL30IuDfx1q+A60uL0tFYEnLTz+eqivSxjc08cQ4Ilz+8x/ID3qBXp932xPWYydv2yo8k7P4Uwiqnm3Ero4VmSFrez9n1QRWNKxrEVBaAgig0E0E0KQNapVPdWKis6wvQi7XZDtadRlWaVR3CRgPYGuaSUsSWJJPEk3PuawFFCVAbItXVHj5VQosrBDe6hiFN+PZvaueunAYNppEiT4nIA9edNJ1VquPNTlgt4sVCoSKd1UcADoL6nl30/Dd7BGT7OMRJ118uYoOrL/AKvfx040mztyDJHMTJlljdowlhZmUA2v41IMdeipdiIS237abg8djqPVNg3xx3/7L+4/KmbF4p5WLyNmZjcnvPpTpLsXLhRiCxB60x5Ldwve/wArWpntUSTxVsbY9coHLQUjNUi2RvxjMOuRXDKOAcZrDuBuDao7QVpAluyb42PFPAI7U+7a30xeKXJI4VDxVRlB8zck1x7G3gnwjZoXtf4gRdTbvFNuSpHsfcfF4gBgmRD959LjwHE+1SGZx03UHtgijpwAb8804z9J2KZbBIlP61j9L1D8bjZJnMkjFmPEn/OlWXg+iyMf4s7E9yKAPdr1ltLovhynqZnD8g9ip88oBFWmOVw1WCPF4GN1R6doBVWoayJrZjMI0TtG4sykgjxFarVSupoRYSCsqUUEUJZVmlTropx2XEtHykQ/zLqPlmqBin7czE9XjIG/5gB8m7J+tNhpwWfFR5oXt5g/n+E3bTlzSO3ezH3N65VNbMRxNa0pK4CmhFJRasbUJ0gmkNLzpHpJpaBSUgoTCVaL0UlCaUU4bIx3UTRy2vkYEjvHMexNN4rIUKBaHNoqZJPs9Z/tXXSHtdYIcmue97ZuFr/61hLvQDA7K2WZsV1wWx0UCw14HhaokkLN8Kk27gTb2rWakXlVDDNuySarethw0H9qbb1bcw02EQQmztL1kiWPZYqQ3K3H61CaDWN6HGzanFEIm5R6pTSisayqKsUx6MtlJNic0gBEa5gDwLA2Htx9qlG++/D4WQwQIuYAFnbUC/IKONQHc/bhwmIWT7vwsP2Tx9tD6VNekrYomjXFw6kC5tzU/Xv/ANa0R2YyG7rj4trRi2mYW0ihyB/v3UFxu9WMmPbxEnkpyj2W1Szoq2jIZpUeR2XJmsxJ1BA58ONV1epr0Vyf70w74m/uWq4yc4WzGRsGHeABtyC5ekdB9sYgWzKp+VvwqLVMelCMDFi3ONfq1MGG2BiZEzpBKy94QkHy019KTx9Z71PCuAw7CTwHsm+krKVCpIYEEcQRYj0rE1BalmprpwL5XVu5gfY1yKa3QHUUKDholxHE1ggrq2xFllkX9V2HsSK50FNIG2gpLVrvW5xU/wBwd0YpI/tOIAZdciH4bDizd+oOnCpNaXGgqZsQyFmdyrk0lWthN5tjYyb7HGImc3C/oiqsRyV7AX0NrHXlUQ3s3YOHxKxJdlkt1ffcm2XzBt7ipPiLRaow3SEczstUVF6Kt6PYmA2XhuuxmQkWzO65u0fuotj5AAXrn/2Rs7asDS4EoHFxdQUs3HK6EC1/KpdQ6lAdLQ58tGuf63VU0CrS2R0dwxJ1mLe5AuVDZUXzbifS1YTbT3fjOTPhSeB7Wb560hA4hOTpWBpoWe7b1VYgVJNyNiLi8QEf4FGZ/EDgvqT9alo3T2djUL4OZB3GN86+RW+npal6PNjyYXFTxyixEa2PIgsbEHu0piEhwB2Skx7JIXmM04Djut29G/mC2TIuG6l2bKGyRKoCobgXLEC5sdPCsN5tnYbH4EY7DqAcnWBgLFlHxKw7xY+oqq+mw32tL4RxD5X/ABq2ujjCmTYcMYsC8MignhdmcC/vWlwzAgrgwyujkDwa1/u1UpFYXq3G3M2bhUX7TIMx0zSS9WCfAAj8aVujvA36wyPkIuBnXL/Na5FZP8d69B/6uHs7+W6qEtRerafcDZ8wtDKwPesiv7g1Dt4dyp8KQf8AEjYgBlHM8ARyJ9qi6JzdVdDj4JTladeR0UVU1afRrtsTRtg5TcgHJfmnNfT6Hwp22Vu1g8DAHxAjLWGd5BcAnkoPDu7zXTFsXBTMk+GKo6kEPCQNe5l4G/Ai19aujjc03evLsWDF42GdhaWmuDuF/PGuCqzfLYZwmIZbdhrlD9R/nkRTn0WEfbBccY2/CrB362AMVhzb/ETVT5f5+ZqCdGOCkGN1VhkRs1xwvYAH1pGPLICNkR4oS4RzXH6gPPl+FNNpbrLiMcszgdUka3H6zhmOXyGhPoKXbe+0GFmEGUtawcrayeFuZtyrPfneUYOLKhHXOCEHd3sfL61S0kpYkkkkkkk8yeJqUj8ppu/FV4PCnENDpvtAoD+fP5QpW5vpu7HjYPtEABkC5gV/4i93n3e1VA61ZvRVtknNhmNxYunhr2h8wfeoz0h7MEGLcKLK/wCkHhnvce4PvVclOaHjxWvBOdFI7DuN1q09ii4rdhxrWq9dmzIs8qL+syj3IFUrouNAlPO/OF6vHTi3F8w8nAb8TTCgqedLOCyzRyjg6ZT+8p/Jh7VAw1TeKcQs2Ff1kDXdntofVZCrh3PCz7OEam10aNrcQdR9CD61Tpepr0X7Z6uYwMezLw8HH5j6Cpwup3eqOkITJCa3Gv5VLzxTYHFFfhmw8nH9qM6HyNgfEGvTmwMTDtLD4XFgaqc4H6rgFWQ+Tf2iqt6fd3ermjxqDsyARyW5OvwN6rcfwiuXoN3q6mZ8HI3Yl7Ud+AkUdofxKL/w+NbK4LzgcWmwu3/tB7YzTQYVTogMrj9prqnyD+9Pn/Z+2ayYWfENwlkyr+7GLE/zFh/DVRb47TONx88q3bPLljHeq9hAPOwP8VeldibL+xYCKFf+FF2j3ta7H1NzTSVIdK29U2PxjYSEsYY36tY1/wCJIDYkgfF2tAPC9c8PQ7tNo8+WEG18hk7flouW/rUd3Z3kOExa4sxCVhnbKWy9p79q9jrqeXOrIXp4Y8cFbym/+lJCrPZWPxOzsTnTNHLG1nQ6XtxRxzH+o5GvVWwdopisPDiVtaSNSO8ZrErfz+leWt79vrjsW+JWLqs4W63vqosTcd9h7V6B6G5M2ycPfkZAPR2tQkqe6ZXvtafwWIf0D86u3osW2ysJ/wBO/uTVGdL7X2tifDqx/QtXt0YC2ysH/wBFaSFTvT3KTtIKTouHjsO67Pf3sPaoHitrYiWOOF5XaOMZUjv2QOQyjj63qa9Oh/71bwhi+rn8abOifZyz7UwysLqpaQg/sKSv9WU+lPimuODdHacCfaUwuIjUDNnXsuBxvlU5x7Vc3RJvk2PheDFWeWLKcxHxofhYjhcEWPoedWSVFrVRXR5AINv4mFdE/wB4W3LKHUgelCFLumLFkJDGDoSznxygAf3Gq2wmOkhYNE7I3epI+nEVZ3SlseWfqXiXNlDCw8bd+lRrZnR1ipbF8sa+Op9v9ayyxuL9Au9gcTBHhwHuHGx48k5bt9JMuZY8SocEgZxowvpcjgfS1WfBh1UdkAX4kCoVsrcHD4UiaZ8+TtEk2UZdbngLedSLYm8WGxJcQyFiupBBGneLjUVdHmaKcdVzsV1UpzwMIA3NafpQTfDdHF4jFu6jMptlJJ0AFrfj6msNndGEp1llC+AFz7n8qdt69/pMNiTFHGrKoGYte7E9xHAeOvOu7ZHSNhZbCUNC3jqv8w/ECq6izG91pD8eIWlu1cKuu1bti7u4XZ2aZpBmy2zOQLDibe1VtvvtpcXiWkT4AAq+IF9fUk1ZO1d08JjgZY3sx4OjZlJ8VJI9rVU229lPhpmik4rzHAg8CPA1GbMBVadi0dHdW55eXEvriKodmptcC1Idx8NnxsA7nDfydr8Kj4FWD0TYLNPJKRoiWH7zH8g3vVTBbgFvxcmSFzuz30HqpV0jbO67BswHaiIceXBvkb/w1TRr0XNEGUqwuGBBHeDoRVCbe2e2Gnkib7rEA96nVT6gg1biG6grm9EzfSYzw1Hzy802CtuGmZGVlNmUgg9xBuK1g1vwOEeaRY4xdmNgP88qoXYJFaq39pYVNr7MZNLyJp+zKuo9mFeXJUkhkI1SSNiDY2KuhsdfAg16q3R2IcDCVklDZjmtwVTbUC515VRnTTg4U2k7Qsp6xFeQD7r6g+4ANvXnXQFka7ryEwYJCGGxei5OiTY/2jaMVxdIbzN3dj4B/MVPoa9MzgSRuoPFSDblcVVvQNsYRYSXFuLGRyFJ/UiuP7s/sKfdx95xLiJ43P8AiuZI7+2X+VVPoaRcGkA8VKOBz2OeP9V50TDrFOEmF1jlCyDnlRrOPYGvRWF6Ptiyorph0KsAwZXexB56NUO6WujWZpnxmCjMiv2pYl+MPzdV+8DxIGt+++lXQy42EGJGxUQ5xqZUF+fYFvpUlQrX3j2Ru5g5RFKjFzqRG8jZB3tZtPLj4VbOwcJBDBHHhgohCgoAb9k63udTe97+Neb90+jrHY6QXjeGIm7zSqV05lQ2rt8vGvS2zcKkMccKcI0VR35VFh9KdoXmbpWa+1sV+8g/8tKv/o4A/wBl4P8A6EZ9xeqF6WMM67WxOZSM7KyafEpRQCO/UW8xXoLcrBtDgcMjjKwhjBU8iFFxSQqI6cD/AN7Sf9KL6GubocxixbUgLGwYOnqy6fMWrd01G+1pv3I/7ahUuFliEchV0DjNG+oDWPFW7wRy1GlHFNeyXcAE30qkejBxiNu4qddUtOwPKzOoU+oqBPvptOeP7OcTK6sMuVQM7X+7dRmP41dXQ/uc+BgaWdcs81uzzRB8KnxuST5gcqElYgFYNIBxIFMWzNrzSYqWF4gqJfKdb6HQnlr6eFxc1q38w8z4R1gHaJF7aHL94X8eFImgpMaHOAJrtUE6Qt7evcwQn9Ep7TD75H/pHzrLooS+IkPH9H9WH5VB54WQlXBVu4ix9qsDofjvJMddEX6n8qxscXSAlejxETIsI5rNq/kart6St3SyfaEXVfi8uf5+/fVYrV5Q7WSbEYjBScgCl+JBUZh5g6+vhUKbo6lOJZQQsN75uYU8gOHlVsrMxtvisuDxYgb1cprTMO48PnaunonwchkkmuRGFynuZiQfkB86auk7FrJjSF+4gVvMXP4iplvBtuDZmGEEAHWWsi/V2/zrVPzTFmLMSSTck8STxNVyU1uQeK0YRrppnYlwobD589Eq1dPRxs7qsGrEWaUlz5cF+Qv/ABVU27+zWxE8cS82AJ7l4sfQXNX/AAxBFCqLBQAB3AaAVLDt1zKnpeWmiIcdT88/Jbar7pQ2LmRcSg1XsSfuk9lvQm38Q7qsGtGJgWRGRxdWBUjvB0NaHNDhS48ExhkDxw9uPovOuWpZ0aRI2Ls3Extl87j8L007z7GfCTtEbkcUb9ZDwPnyPiDTbg8U8TrIhKspuCORrE0lrrK9Q9onhIadxoU/9NewNoSSxSRrJNh1jtaMFsslzdii6m4K2Nj8J4c692BuHj8VIEXDyICRmkkQoqjmxzWJ8hxq6dmdJyZQMREwbmyWIPoTcfOscf0kwAHqopGY/rEKPqT8q2daw8V584DE3WX8Lt3lmj2ds1cJFocgiTvtbtN52ufM1VUM7KwZSQRqCNCCOFq6Ns7YkxUhklOvIDgo7gK4QaySvzutd3BYbqI8p34qyNhdJmVQmKQsRpnS1z5r+XtUgHSFgCL52v3ZDeqXFJTEzwoP6Lw7jdEdx/IKtTanSfGARh4mZuTP2V9uJ+VRfZG+00WKM8pLhhldeHZ5BRwFuXme+9ROg1EyOJu1bHgYGNLQ3ffn5q7U3y2fIFkaRMw1Gde0vlcX9q6d395o8ZJKsSnJGF7R0LFieA5DTnVECpZ0fbeTCYg9YbRyDKx7iD2SfDiPWrWzkkWsM3RcbY3Flk8NfxXBRHpfFtrTjwj/ALFq5Nw8LA2xsL9oSNoxEGbrACttTc5q6dv7kbP2i64iVczWAzo5XMo4A5ePHjxpt362zh8NhPscGUHKECLwSMW492mlq0PdlBcVx4IXSyBg/rtTlHtHZODu0X2ZD/ykXN/QL1Gdq9KT9Z/u8a9WP1x2m9j2fnVcuaDWN07yvQRdFwMNn6u/byViTdK0hXsYdA3eWJHsLfWtWG6U5sw6yGNl55bg+hJNV5WRo6x/NX/4GGArIPVW6u2tlY0fpcsbd0gC6+Z7Psa7sPj9nbPjcxyR3bUhWDM1uAAB/wA3qlBRlqfXu7LWb/yo9g52XknbaW3ZJMS2JUlHLZlsdVtoB7WFPDdIuNyZcyXt8WTtefG3yqJWpbVUHEbFbnYeJwAc0GttFtxWKeRy8jFmJ1JNyawUXpAKf90NhNi51QXCDV27lHH1PAedIAk0pve2NpcdAFOui7YeRGxDjV+yn7o+JvUi3p41YFaYIVRVRRZVAAA4ADQCt1b2tDRQXkJ5jNIXnj7cEUUUVJUqOb5bvDFw2W3Wpcxn6qT3H62qk8RAyMVYEMDYg6EEcRavR9QXf7dL7QDPCP0oHaUffA5j9ofMVRNHf1DddXo7GdWeredDt2H9+6qMisGrokSxrSwrIvQ1awtSrS0op2jKkoWlpVpJpDQaW1KaELWaBQTS0k1tTFyILJI6juViB7A1z5r61maQCgoWBFLSkUhoQgUGkpbU0IpKW1JahCyFZmsVrbDGWIAFydAB3mhC24LCNI6oilixsAOJJ4VeO6WwlwcATQyNYyN3t3DwHAep5017i7qDCr1soHXMNB+op5fvHmfTvvMq1wx5dTuvN9I43rT1bD9I9T+OSKKKKvXLRRRRQhFFFFCFBN99yhPmngFpeLLyfxHc3186qjERFSVYEEaEHQgjkRyr0lUW3q3QixgzC0c3JwNG7gw5+fEfKqJIb+pu662C6R6umS7cDxH69e9UiKKcttbCmwr5JUK9x+6w7w3OuLDC7KPEfWsp03XoGuDhmB0WsUCpntLYcbvOEF5c4KhTZUVmsAbaXK3Y9wt400Nu4zNGsDiUOHINso7BysdSdL8DzuKZaQqm4lhF7f1flW3Okxilat5wcmXPkbLe2axy37r8OdaWWo2rgsKLUUgotNZGkrficKyZMw+MBl/dNwD7g1oFCQNiwsDRWeQ8bGwru/2NNlzmMhNDmPIHgxHEDxtaikFwG5TbQaki7Bji6zrZM7wrmeNARcGwFnOlhmBOlNu28GiFGjv1ciB1ubkcmUnmQQR7UyCN1BszXGh84+23A8E2UAVkBTzu/u7Ni3yxLoPiY6Kvmfw40UTspOe1gJcaCbsJhWkYIilmJsABck+Aq3ty9zFwwEswDTchxCfm3jy5d9OW6+60ODW4GeUjtSEa+S/qj61Iq1RQ5dTuvPY3pEy2yPRvPif0iiiir1ykUUUUIRRRRQhFFFFCEUUUUIXJjcFHMhSVA6niD/nQ+IqvNv8ARqRd8I1x/wCG5sfRuB9bedWdRUHsa7daIMVLAbYfDh5Lz3OuJwpeJg8ZcWcEWzL5niPEV1bO3jMawplssbhmYfEVDZsuvAXufHTuq8Mbgo5lyyorr3MAaiG1ejfDyXMTNEe74l9jqPeqDC4faV1o+k4ZBUra7tRdVfPu3UMwu1oZGljclIerARefYcNbT7zdr1PhWe0JVnRXQI00yCNVFuxlZrnXh2QgHrWzH9HGLj1QJKP2WsfY2pgxe7+Ji/xIJV8cht7jSqzmG4WxnUP1jePg4jfUgE864WU57NwEUkKSsoCxF+utoWHxRjzJuldCbNw4EYYLaRM7ECUuCb3yZQVsvCxvw1pjmxtoepRMlyGkJJJYqNNLaAXJt41yx42VVKLI4Q8VDEL7XqOZqtdFIbNkany15dpvuobqVQ4VXVCY+tZcHmRdfiWVhwHEWJ0pu2js8yLAViEcrlgUHZBC2s4Vj2eY8bU37N2gY8+YsbxPGtj8JOot3C+ulcjmSQ3JZj3klj86MwQ2J4cSD8N9tb6nZSKR2aGMRTxxxiLLIhcL2tc+ZeLZuVr1jNtSHrJJw7FpEZeqy8Cy5SC17FRxHPhTbg92sZLbJBIfHKQPc6VI9ndGmJfWRkiHicx9l0+dMZjsFW8wR/e8Dfv157k8Nd+1RnEbadnDgWYxdU99c3ZykkeIt6isMBs6fEkRxI724AahbnXwWrU2R0c4WKzSlpm8eyvsNfc1LcLhkjXLGioo5KAB7CrWwE/cscvSsTNIm32nT9qvt3ujUCz4pr/8tDp/E34D3qwcLhUiUJGoVRwCiwFdFFaGsa3ZcefEyzG3nw4eXwooooqSoRRRRQhFFFFCEUUUUIRRRRQhFFFFCEUUUUIRRRRQhFFFFCRUU3l+961XeL+I+dLRVMy7vRv2pdn/ABD0qyt2uAoopw7qHSX2hSOiiiriuI1FFFFJSRRRRQhFFFFCEUUUUIRRRRQhf//Z";
+                            
+
+                        }else{
+                            image_url=data["data"][i]["image_url"];
+
+                        }
+                        
+                        var name=data["data"][i]["name"];
+                        console.log(name)
+                        var rating=data["data"][i]["rating"];
+                        var distance=((data["data"][i]["distance"])/1609.344).toFixed(2);                       
+                        var searchtableRow=document.createElement('tr');                       
+                        searchtableRow.innerHTML='<td>'+(i+1)+'</td><td>'+'<img src=' + image_url +' style="width: 80px; height:80px"></img>'+'</td><td onclick="getdetail('+i+')">'+name+'</td><td>'+rating+'</td><td>'+distance+'</td>';
+                        document.getElementById("searchtableBody").appendChild(searchtableRow);
+
+                    }
+
+
+                }                                     
+            })
+            
+            .catch((error)=>{
+                    console.error(error);
+                })
+                console.log("执行3333333333333333333333333333")
+                window.location.hash="result";
+    }
+    async function getdetail(data_index){
+        document.getElementById("page").style.display="block"
+        var reqdetail_url = "http://127.0.0.1:5000/detail?"
+        var business_id=data_copy[data_index]["id"]
+        reqdetail_url+="id="+business_id;
+        console.log(reqdetail_url);
+        var response=await fetch(reqdetail_url)
+            .then(res => res.json())
+            .then(function(data){
+                console.log(data);
+                console.log(data["data"]["name"]);
+                document.getElementById("detailname").innerHTML=data["data"]["name"];
+                document.getElementById("addinfo").innerHTML=data["data"]["location"]["display_address"];
+                var tranlength=data["data"]["transactions"].length;
+                if (tranlength==0){
+                    document.getElementById("traninfo").innerHTML="  ";
+                    document.getElementById("tran").style.visibility="hidden";
+                }
+                else{
+                    document.getElementById("tran").style.visibility="visible";
+                    trantext="";
+                for (var i=0;i<tranlength;i++){
+                    if(i!=(tranlength-1)){
+                        trantext+=data["data"]["transactions"][i]+"|";
+
+                    }
+                    else{
+                        trantext+=data["data"]["transactions"][i];
+                    }
+                }
+                document.getElementById("traninfo").innerHTML=trantext;
+
+                }
+
+                var catlength=data["data"]["categories"].length;
+                console.log(catlength);
+                if (catlength==0){
+                    document.getElementById("categoryinfo").innerHTML="  ";
+                    document.getElementById("category2").style.visibility="hidden";
+                }
+                else{
+                    document.getElementById("category2").style.visibility="visible";
+                    var cattext="";
+                for(var i=0;i<catlength;i++){
+                    if(i!=(catlength-1)){
+                        cattext+=data["data"]["categories"][i]["title"]+"|";                  
+                    }
+                    else{
+                        cattext+=data["data"]["categories"][i]["title"];
+                    }
+                }
+                console.log(cattext);
+                document.getElementById("categoryinfo").innerHTML=cattext;
+
+                }
+                if(data["data"]["display_phone"]==""){
+                    document.getElementById("numinfo").innerHTML="  ";
+                    document.getElementById("number").style.visibility="hidden";
+
+                }else{
+
+                    document.getElementById("numinfo").innerHTML=data["data"]["display_phone"];
+                    document.getElementById("number").style.visibility="visible";
+                }
+                
+                document.getElementById("priceinfo").innerHTML=data["data"]["price"];
+                console.log(data["data"]["url"]);
+                document.getElementById("moreinfo").innerHTML="<A href="+data["data"]["url"]+">Yelp</A>";
+                console.log(data["data"]["photos"][0]);
+                var imglength=data["data"]["photos"].length;
+                console.log(imglength)
+                if (imglength==0){
+                    document.getElementById("container1").style.visibility="hidden";
+                    document.getElementById("container2").style.visibility="hidden";
+                    document.getElementById("container3").style.visibility="hidden";
+
+                }else if (imglength==1){
+                    document.getElementById("container1").style.visibility="visible";
+                    document.getElementById("container2").style.visibility="hidden";
+                    document.getElementById("container3").style.visibility="hidden";
+
+
+                }else if (imglength==2){
+                    document.getElementById("container1").style.visibility="visible";
+                    document.getElementById("container2").style.visibility="visible";
+                    document.getElementById("container3").style.visibility="hidden";
+
+
+                }else{
+                    document.getElementById("container1").style.visibility="visible";
+                    document.getElementById("container2").style.visibility="visible";
+                    document.getElementById("container3").style.visibility="visible";
+                }
+
+                var image1url=data["data"]["photos"][0];
+                console.log(image1url);
+                document.getElementById("img1").innerHTML='<IMG style="width:100%;max-height:300px;overflow:hidden" SRC='+image1url+ '>';
+                var image2url=data["data"]["photos"][1];
+                document.getElementById("img2").innerHTML='<IMG style="width:100%;max-height:300px;overflow:hidden" SRC='+image2url+ '>';
+                var image3url=data["data"]["photos"][2];
+                document.getElementById("img3").innerHTML='<IMG style="width:100%;max-height:300px;overflow:hidden" SRC='+image3url+ '>';
+                console.log(data["data"]["hours"])
+                var status=data["data"]["hours"][0]["is_open_now"]
+                console.log("open?+++++++++++"+status)
+                if (status==true){
+                  document.getElementById("statusinfo").innerHTML="Open Now";
+                  document.getElementById("statusinfo").style.background='green';
+                }else{
+                    document.getElementById("statusinfo").innerHTML="Closed";
+                    document.getElementById("statusinfo").style.background='red';
+                    
+
+
+                }
+                window.location.hash="page";
+                    
+                
+
+            })
+
+    }
+   
+    function myclear(){
+        document.getElementById("keyword").value=" ";        
+        document.getElementById("distance").value=10;
+        document.getElementById("category").value="Default";
+        document.getElementById("checkloc").checked=false;
+        document.getElementById("location").disabled =false;
+        document.getElementById("location").value=" ";  
+        clearresult(); 
+        document.getElementById("searchtable").style.display="none";
+        document.getElementById("norecord").style.display="none";
+        document.getElementById("page").style.display="none";   
+    }
+    function checkchange(status){
+        document.getElementById("location").value="";
+        document.getElementById("location").disabled =status;
+    }
+    function clearresult(){
+        document.getElementById("norecord").innerHTML='';
+        document.getElementById("searchtableHead").innerHTML='';
+        document.getElementById("searchtableBody").innerHTML='';
+
+  
+    }
+    function ratingsort(){
+        if (rating_status==true){
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[3];
+        y = rows[j + 1].getElementsByTagName("td")[3];      
+        if (x.innerHTML> y.innerHTML) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    rating_status=(!rating_status);
+    resetindex(table);
+}else{
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[3];
+        y = rows[j + 1].getElementsByTagName("td")[3];      
+        if (x.innerHTML< y.innerHTML) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    rating_status=(!rating_status);
+    resetindex(table);
+}
+}
+function distancesort(){
+        if (distance_status==true){
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[4];
+        y = rows[j + 1].getElementsByTagName("td")[4];      
+        if (x.innerHTML> y.innerHTML) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    distance_status=(!distance_status);
+    resetindex(table);
+}else{
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[4];
+        y = rows[j + 1].getElementsByTagName("td")[4];      
+        if (x.innerHTML< y.innerHTML) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    distance_status=(!distance_status);
+    resetindex(table);
+}
+}
+function namesort(){
+        if (name_status==true){
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[2];
+        y = rows[j + 1].getElementsByTagName("td")[2];      
+        if (x.innerHTML.toLowerCase()> y.innerHTML.toLowerCase()) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    name_status=(!name_status);
+    resetindex(table);
+}else{
+            var table = document.getElementById("searchtableBody");
+            var rows = table.rows;
+   
+    for (var i = 0; i < (rows.length - 1); i++) {
+       for (var j = 0; j < (rows.length -1-i); j++) {
+           
+        x = rows[j].getElementsByTagName("td")[2];
+        y = rows[j + 1].getElementsByTagName("td")[2];      
+        if (x.innerHTML.toLowerCase()< y.innerHTML.toLowerCase()) {
+            rows[i].parentNode.insertBefore(rows[j + 1], rows[j]);
+        
+      }
+      
+      
+    }}
+    name_status=(!name_status);
+    resetindex(table);
+}
+}
+function resetindex(targettable){  
+    var rows = targettable.rows;
+    for (var i = 0; i < rows.length ; i++) {
+        x = rows[i].getElementsByTagName("td")[0].innerHTML=(i+1);
+
+    }
+
+   }
+
+</script>
+</head>
+<body>
+    <DIV class="firstwindow">
+    <DIV >
+        <IMG class="image1" SRC="https://csci571.com/hw/hw6/images/banner.jpeg" ALT="banner" >
+        <DIV class="headline1">
+            Business Search
+        </DIV>
+        <DIV class="headline2">
+            Fill out the form to get businesses near you!
+        </DIV>
+    </DIV>
+   
+        <form name="myform" target="" action="#" method="get">
+        <DIV class="input1">
+            Keyword <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="keyword" name="keyword" TYPE="text" maxlength="255" size="53" required>
+        </DIV>
+        <DIV class="input2">
+            Distance(miles)<BR>
+            <INPUT class="inputbox" id="distance" TYPE="text" value="10" maxlength="20" size="12" required>
+        </DIV>
+        <DIV class="input3">
+            Category <span style="color:red">*</span><BR>
+            <SELECT class="selectbox" id="category" name="category">
+                <OPTION value="Default">Default
+                <OPTION value="arts">Arts & Entertainment
+                <OPTION value="health">Health & Medical
+                <OPTION value="hotels">Hotels & Travel
+                <OPTION value="food">Food
+                <OPTION value="professional Services">Professional Services
+        </SELECT>
+        </DIV>
+        <DIV class="input4">
+            Location <span style="color:red">*</span><BR>
+            <INPUT class="inputbox" id="location" TYPE="text" maxlength="255" size="53" required>
+        </DIV>   
+        <DIV class="line1">        
+            <hr style="border: 2px solid #4f6fad" width=580px/>
+        </DIV>
+        <DIV class="input5">
+            Want us to auto-detect your location?Check here
+            <input class="checkbox" id="checkloc" type="checkbox" onClick="checkchange(this.checked)">
+        </DIV>    
+        <DIV class="input6">
+            <!-- <button class="button button1" type="submit">Submit</button> -->
+            <button class="button button1" onclick="search(event)">Submit</button>
+            <button class="button button2" onClick="myclear()">Clear</button>
+        </DIV>
+    </form>
+    </DIV>
+    <DIV id="result">
+        
+        <DIV id="norecord"style="display: none;">
+            
+               
+        </DIV>
+        <table id="searchtable"align="center" border="1" cellspacing="0" style="margin-top: 50px; display: none;width:780px;">
+            <thead id="searchtableHead" align="center" style="background-color: #4f6fad; min-width:100%;height:40px;">
+                
+            </thead>
+            <tbody align="center" id="searchtableBody" style="background-color: white;">
+
+            </tbody>
+
+        </table>
+
+    </DIV>
+    <div id="page" class="page">
+        <div id="detailname"class="detailtitle">
+           
+
+
+        </div>
+        <div class="line2">
+            <hr style="border: 0.5px solid rgb(198, 193, 193)" width=760px/>
+
+        </div>
+      
+        <div id="status"class="status">
+            Status
+            <div id="statusinfo"class="statusinfo">
+                
+
+            </div>
+        </div>
+        <div id="category2" class="category">
+            Category
+            <div id="categoryinfo" class="categoryinfo">
+                
+            </div>
+
+        </div>
+        <div id="address" class="address">
+            Address
+            <div id="addinfo"class="addinfo">
+                
+
+            </div>
+         
+        </div>
+        <div id="number" class="number">
+            Number
+            <div id="numinfo" class="numinfo">
+               
+
+            </div>
+         
+        </div>
+        <div id="tran" class="tran">
+            Transactions Supported
+            <div id="traninfo" class="traninfo">
+               
+
+            </div>
+         
+        </div>
+        <div id="price"class="price">
+            Price
+            <div id="priceinfo" class="priceinfo">
+               
+            </div>
+        </div>
+        <div class="more">
+            Moreinfo
+            <div id="moreinfo" class="moreinfo">
+               yelp
+            </div>
+        </div>
+        <div id="container1"class="container1">
+            <div id="img1">
+
+            </div>
+            
+            <div class="imagetext">
+                Photo1
+                
+
+            </div>
+
+        </div>
+        <div id="container2"class="container2">
+            <div id="img2">
+
+            </div>
+            <div class="imagetext">
+                Photo2
+
+            </div>
+
+        </div>
+        <div id="container3"class="container3">
+            <div id="img3">
+
+            </div>
+            <div class="imagetext">
+                Photo3
+
+            </div>
+
+        </div>
+        
+
+
+
+
+    </div>
+  
+</body>
+
+
+</html>
