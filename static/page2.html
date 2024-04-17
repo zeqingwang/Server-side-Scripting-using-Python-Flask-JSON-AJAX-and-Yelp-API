@@ -112,7 +112,7 @@
         distance=document.getElementById("distance").value
         category=document.getElementById("category").value     
         if(document.getElementById("checkloc").checked==false){//get the lat&lon for inputlocation
-            var geo_url = "https://maps.googleapis.com/maps/api/geocode/json?key=AIzaSyBESrZs_dUaIqlwB4aejmdWRd1EGayoCEA&address=";
+            var geo_url = "https://maps.googleapis.com/maps/api/geocode/json?key=YOUR-API-KEY&address=";
             geo_url+=document.getElementById("location").value
             fetch(geo_url)
                 .then(res => res.json())
